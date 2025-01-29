@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-flask-app
+    env: python
+    region: us-east-1
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: SECRET_KEY
+        value: "9d4d9417c260034752461e782a63a0e327737194dcfee9d435fd988364d1ea56"
