@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Format Converter</title>
+</head>
+
+<body>
+    <h1>Image Format Converter</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <select name="format" required>
+            <option value="png">PNG</option>
+            <option value="jpg">JPG</option>
+            <option value="jpeg">JPEG</option>
+            <option value="webp">WebP</option>
+            <option value="grayscale">Grayscale</option>
+        </select>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</body>
+
+</html>
